@@ -16,6 +16,7 @@ function inputSetup() {
   input.position(20, 20);
   _input_text(input);
   input.input(consoleFeedback);
+  //extra comment for testing purposes
 
   let button = createButton('submit');
   button.position(25 + input.width, 65);

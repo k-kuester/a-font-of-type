@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>a-font-of-type.js</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+  div.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+/* Create two equal columns that sits next to each other */
+  div.column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 2px;
+  }
+
+div.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+figcaption {
+    
+    color: rgb(11, 11, 11);
+
+    padding:2px;
+    text-align: left;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">prologue</a>
+    <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">demo</a>
+    <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hide-small">gallery</a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">about</a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Demo</a>
+  <a href="#gallery" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Gallery</a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Header Images -->
+  <div class="w3-display-container w3-center">
+    <img src="https://i.imgur.com/dxC8VYD.jpg" style="max-width:100%; height:auto">
+    <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small w3-size: 14px">
+      <h3 class="w3-black" style="text-shadow:1px 1px 0 rgb(162, 163, 162)">a-font-of-type.js</h3>
+      <p style="text-shadow:1px 1px 0 rgb(12, 13, 12)">tracing embodied typography across texts and time</p>    
+    </div>
+  </div>
+
+
+  <!-- Intro Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">a-font-of-type.js</h2>
+    <p class="w3-opacity"><i>Building a (Better) Book, Spring '23</i></p>
+    <p class="w3-justify">This project seeks to visualize typesetting as an embodied practice, tracing the choreography of compositors across space and time. Named for "A Font of Type," a poem by Walt Whitman (a compositor himself,) a-font-of-type.js maps the paths specific texts take through the standard California Job Case.</p>
+    <div class="w3-row w3-padding-32">
+      <p>Getting Started</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="w3-gray" id="gallery">
+    <div class="w3-container w3-content w3-padding-64" style="max-width: auto">
+      <h2 class="w3-wide w3-center">gallery</h2>
+      <p class="w3-opacity w3-center"><i>poems by walt whitman</i></p><br>
+
+      <div class="row">
+        <div class="column">
+          <figure>
+            <img src="https://i.imgur.com/frAOjyX.jpg" alt="Hello, world!">
+            <figcaption>Hello, World!</figcaption>
+          </figure>
+          <figure>
+            <img src="https://i.imgur.com/poSoATN.jpg" alt="A Font of Type">
+            <figcaption>A Font of Type</figcaption>
+          </figure>
+          <figure>
+            <img src="https://i.imgur.com/tprh9KC.jpg" alt="O me! O life!">
+            <figcaption>O Me! O Life!</figcaption>
+          </figure>
+      
+        </div>
+        <div class="column">
+          <figure>
+            <img src="https://i.imgur.com/XH3vW7D.jpg" alt="Sometimes With One I Love">
+            <figcaption>Sometimes With One I Love</figcaption>
+          </figure>
+          <figure>
+            <img src="https://i.imgur.com/3eRp8O3.jpg" alt="A Clear Midnight">
+            <figcaption>A Clear Midnight</figcaption>
+          </figure>
+          <figure>
+            <img src="https://i.imgur.com/GdW8GTR.jpg" alt="All Is Truth">
+            <figcaption>All Is Truth</figcaption>
+          </figure>
+
+        </div>
+      </div>
+      
+
+
+  <!-- About Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="about">
+    <h2 class="w3-wide w3-center">about</h2>
+    <p class="w3-opacity w3-center"><i>artist's Statement</i></p>
+    <p>here's some text i guess?</p>
+
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> Champaign, IL<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: keelyk2@illinois.edu<br>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  
+  <p class="w3-medium">Created by Keely Kuester, Spring 2023</p>
+</footer>
+
+</body>
+</html>

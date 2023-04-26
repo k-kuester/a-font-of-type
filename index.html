@@ -1,13 +1,62 @@
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
-    <script src="data.js"></script>
-    <script src="sketch.js"></script>
-    <style>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <title>Document</title>
+    <style> 
+      body {background-color: rgb(184, 177, 146);}
+      .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgba(33, 74, 27, 0.788);
+      color: rgb(34, 29, 22);
+      }
+      .nav-links a {
+      color: rgb(34, 29, 22);
+      }
+      .logo {
+      font-size: 32px;
+      }
+      .menu {
+        list-style:none;
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+      }
+
+      .menu li:hover {
+        background-color: rgba(33, 74, 27, 0.876);
+        border-radius: 3px;
+        transition: 0.3s ease;
+      }
+
+      .menu li {
+        padding: 5px 14px;
+      }
+    
+
     </style>
   </head>
   <body>
-    <main>
-    </main>
+    <nav class="navbar">
+      <div class="logo">a-font-of-type.js</div>
+      <ul class="nav-links">
+        <div class="menu">
+        <li>
+          <a href="about.html">About</a>
+        </li>
+        <li>
+          <a href="sketch.html">Try it!</a>
+        </li>
+        <li>
+          <a href="gallery.html">Gallery</a>
+        </li>
+      </div>
+      </ul>
+    </nav>
   </body>
 </html>

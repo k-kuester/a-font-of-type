@@ -44,11 +44,12 @@ figcaption {
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
     <a href="#prologue" class="w3-bar-item w3-button w3-padding-large w3-hide-small">prologue</a>
+    <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">demo</a>
     <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hide-small">gallery</a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">about</a>
-    <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small"> -> enter demo</a>
+    <a href="a-font-of-type" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">oops</a>
   </div>
 </div>
 
@@ -79,8 +80,7 @@ figcaption {
     <p class="w3-opacity"><i>Building a (Better) Book, Spring '23</i></p>
     <p class="w3-justify">This project seeks to visualize typesetting as an embodied practice, tracing the choreography of compositors across space and time. Named for "A Font of Type," a poem by Walt Whitman (a compositor himself,) a-font-of-type.js maps the paths specific texts take through the standard California Job Case.</p>
     <div class="w3-row w3-padding-32">
-      <p>Getting Started:</p>
-      <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">enter demo</a>
+      <p>Getting Started</p>
     </div>
   </div>
 
@@ -128,8 +128,8 @@ figcaption {
   <!-- About Section -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="about">
     <h2 class="w3-wide w3-center">about</h2>
-    <p class="w3-opacity w3-center"><i>artist's statement</i></p>
-    <p>hi, here's where i'll ramble insufferably i guess</p>
+    <p class="w3-opacity w3-center"><i>artist's Statement</i></p>
+    <p>here's some text i guess?</p>
 
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">

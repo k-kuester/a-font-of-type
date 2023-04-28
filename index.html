@@ -16,8 +16,9 @@
     flex-wrap: wrap;
     padding: 0 4px;
   }
+  
+/* Create two equal columns that sit next to each other */
 
-/* Create two equal columns that sits next to each other */
   div.column {
     flex: 50%;
     max-width: 50%;
@@ -31,12 +32,91 @@ div.column img {
 }
 
 figcaption {
-    
     color: rgb(11, 11, 11);
-
     padding:2px;
     text-align: left;
 }
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.5s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 800px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+img{white-space:pre}
+
 </style>
 </head>
 <body>
@@ -44,25 +124,26 @@ figcaption {
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">prologue</a>
-    <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">demo</a>
+    <a class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
+    <a href="#prologue" class="w3-bar-item w3-button w3-padding-large w3-hide-small">introduction</a>
     <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hide-small">gallery</a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">about</a>
+    <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small"> -> enter demo</a>
   </div>
 </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Demo</a>
-  <a href="#gallery" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Gallery</a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+  <a href="#prologue" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="myFunction()">introduction</a>
+  <a href="#gallery" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">gallery</a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">about</a>
+  <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="myFunction()"> -> enter demo</a>
 </div>
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-  <!-- Header Images -->
+  <!-- Header Image -->
   <div class="w3-display-container w3-center">
     <img src="https://i.imgur.com/dxC8VYD.jpg" style="max-width:100%; height:auto">
     <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small w3-size: 14px">
@@ -73,13 +154,11 @@ figcaption {
 
 
   <!-- Intro Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="prologue">
     <h2 class="w3-wide">a-font-of-type.js</h2>
     <p class="w3-opacity"><i>Building a (Better) Book, Spring '23</i></p>
     <p class="w3-justify">This project seeks to visualize typesetting as an embodied practice, tracing the choreography of compositors across space and time. Named for "A Font of Type," a poem by Walt Whitman (a compositor himself,) a-font-of-type.js maps the paths specific texts take through the standard California Job Case.</p>
-    <div class="w3-row w3-padding-32">
-      <p>Getting Started</p>
-    </div>
+  
   </div>
 
   <!-- Gallery Section -->
@@ -90,44 +169,60 @@ figcaption {
 
       <div class="row">
         <div class="column">
+
           <figure>
-            <img src="https://i.imgur.com/frAOjyX.jpg" alt="Hello, world!">
-            <figcaption>Hello, World!</figcaption>
-          </figure>
-          <figure>
-            <img src="https://i.imgur.com/poSoATN.jpg" alt="A Font of Type">
-            <figcaption>A Font of Type</figcaption>
-          </figure>
-          <figure>
-            <img src="https://i.imgur.com/tprh9KC.jpg" alt="O me! O life!">
+            <img class="myImages" id="myImg" src="https://i.imgur.com/frAOjyX.jpg" alt="Hello, world!">
+            <figcaption>Hello, world!</figcaption>
+            <img class="myImages" id="myImg" src="https://i.imgur.com/tprh9KC.jpg" alt="O me! O life!">
             <figcaption>O Me! O Life!</figcaption>
+            <img class="myImages" id="myImg" src="https://i.imgur.com/XH3vW7D.jpg" alt="Sometimes With One I Love">
+            <figcaption>Sometimes With One I Love</figcaption>
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
           </figure>
       
         </div>
         <div class="column">
           <figure>
-            <img src="https://i.imgur.com/XH3vW7D.jpg" alt="Sometimes With One I Love">
-            <figcaption>Sometimes With One I Love</figcaption>
-          </figure>
-          <figure>
-            <img src="https://i.imgur.com/3eRp8O3.jpg" alt="A Clear Midnight">
+            <img class="myImages" id="myImg" src="https://i.imgur.com/poSoATN.jpg" alt="A Font of Type">
+            <figcaption>A Font of Type</figcaption>
+            <img class="myImages" id="myImg" src="https://i.imgur.com/3eRp8O3.jpg" alt="A Clear Midnight">
             <figcaption>A Clear Midnight</figcaption>
-          </figure>
-          <figure>
-            <img src="https://i.imgur.com/GdW8GTR.jpg" alt="All Is Truth">
+            <img class="myImages" id="myImg" src="https://i.imgur.com/GdW8GTR.jpg" alt="All Is Truth">
             <figcaption>All Is Truth</figcaption>
+            <div id="myModal" class="modal">
+              <span class="close">&times;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
           </figure>
-
+    
         </div>
+      </div>
+
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
       </div>
       
 
-
   <!-- About Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="about">
+  <div class="w3-container w3-content w3-padding-64" style="max-width:100%" id="about">
+    <div class="w3-display-container w3-center">
+      <img src="https://i.imgur.com/x74PhTp.jpg" style="max-width:100%; height:auto">
+      <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small w3-size: 14px">
+        <h3 style="text-shadow:1px 1px 0 rgb(162, 163, 162)">get started:</h3>
+        <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">enter demo</a>   
+      </div>
+    </div>
+
     <h2 class="w3-wide w3-center">about</h2>
-    <p class="w3-opacity w3-center"><i>artist's Statement</i></p>
-    <p>here's some text i guess?</p>
+    <p class="w3-opacity w3-center"><i>artist's statement</i></p>
+    <p>hi, here's where i'll ramble insufferably i guess</p>
 
     <div class="w3-row w3-padding-32">
       <div class="w3-col m6 w3-large w3-margin-bottom">
@@ -136,6 +231,8 @@ figcaption {
       </div>
     </div>
   </div>
+
+
   
 <!-- End Page Content -->
 </div>
@@ -146,5 +243,35 @@ figcaption {
   <p class="w3-medium">Created by Keely Kuester, Spring 2023</p>
 </footer>
 
+<script>
+  // create references to the modal
+var modal = document.getElementById('myModal');
+// to all images 
+var images = document.getElementsByClassName('myImages');
+// the image in the modal
+var modalImg = document.getElementById("img01");
+// and the caption in the modal
+var captionText = document.getElementById("caption");
+
+// Go through all of the images with our custom class
+for (var i = 0; i < images.length; i++) {
+  var img = images[i];
+  // and attach our click listener for this image.
+  img.onclick = function(evt) {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+</script>
+  
 </body>
 </html>
+

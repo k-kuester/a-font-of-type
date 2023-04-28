@@ -9,7 +9,14 @@
 //let _text = Array.from("Sometimes with one I love I fill myself with rage for fear I effuse unreturn'd love,~But now I think there is no unreturn'd love, the pay is certain one way or another~(I loved a certain person ardently and my love was not return'd,~Yet out of that I have written these songs).")
 //let _text = Array.from("Shut not your doors to me proud libraries,~For that which was lacking on all your well-fill'd shelves, yet needed most, I bring,~Forth from the war emerging, a book I have made,~The words of my book nothing, the drift of it every thing,~A book separate, not link'd with the rest nor felt by the intellect,~But you ye untold latencies will thrill to every page.")
 //let _text = Array.from("This is thy hour O Soul, thy free flight into the wordless,~Away from books, away from art, the day erased, the lesson done,~Thee fully forth emerging, silent, gazing, pondering the themes thou lovest best,~Night, sleep, death and the stars.");
-let _text = Array.from("O me, man of slack faith so long,~Standing aloof, denying portions so long,~Only aware to-day of compact all-diffused truth,~Discovering to-day there is no lie or form of lie, and can be none,~but grows as inevitably upon itself as the truth does upon itself,~Or as any law of the earth or any natural production of the earth does.~~(This is curious and may not be realized immediately, but it must be realized,~I feel in myself that I represent falsehoods equally with the rest,~And that the universe does.)~~Where has fail'd a perfect return indifferent of lies or or the truth?~Is it upon the ground, or in water or fire? or in the spirit of man? or in the meat and blood?~~Meditating among liars and retreating sternly into myself, I see~that there are really no liars or lies after all,~And that nothing fails its perfect return, and that what are called lies are perfect returns,~And that each thing exactly represents itself and what has preceded it,~And that the truth includes all, and is compact just as much as~space is compact,~And that there is no flaw or vacuum in the amount of the truth--but~that all is truth without exception;~And henceforth I will go celebrate any thing I see or am,~And sing and laugh and deny nothing.")
+//let _text = Array.from("O me, man of slack faith so long,~Standing aloof, denying portions so long,~Only aware to-day of compact all-diffused truth,~Discovering to-day there is no lie or form of lie, and can be none,~but grows as inevitably upon itself as the truth does upon itself,~Or as any law of the earth or any natural production of the earth does.~~(This is curious and may not be realized immediately, but it must be realized,~I feel in myself that I represent falsehoods equally with the rest,~And that the universe does.)~~Where has fail'd a perfect return indifferent of lies or or the truth?~Is it upon the ground, or in water or fire? or in the spirit of man? or in the meat and blood?~~Meditating among liars and retreating sternly into myself, I see~that there are really no liars or lies after all,~And that nothing fails its perfect return, and that what are called lies are perfect returns,~And that each thing exactly represents itself and what has preceded it,~And that the truth includes all, and is compact just as much as~space is compact,~And that there is no flaw or vacuum in the amount of the truth--but~that all is truth without exception;~And henceforth I will go celebrate any thing I see or am,~And sing and laugh and deny nothing.")
+
+//vars
+let caseImage;
+
+function preload() {
+  caseImage = loadImage('https://i.imgur.com/aVLNj8h.jpg');
+}
 
 function _input_text(text) {
     //for user input functionality
@@ -17,14 +24,21 @@ function _input_text(text) {
 }
 
 function inputSetup() {
-    //create input box and button [non-functional]
+    fill(0)
+        .strokeWeight(0)
+        .textSize(16);
+    text("welcome to the interactive demo! \n please enter your desired text.", 50, 70);
+    textStyle(ITALIC);
+    text("note: copy/paste functionality is currently unsupported.", 50, 110);
+
+    //create input box and button 
   inp = createInput();
-  inp.position(50, 70);
+  inp.position(50, 60);
   //input.input(consoleFeedback);
   //extra comment for testing purposes
 
   button = createButton('submit');
-  button.position(55 + inp.width, 70);
+  button.position(55 + inp.width, 60);
   button.mousePressed(pressed);
 
 }
@@ -44,6 +58,21 @@ function _map_character(ch) {
     //randomization can be changed with int(random(min, max)) 
 
     for (let i = 0; i < chars.length; i++) {
+        //currently hard-coding is the only way to ensure this error works - to be improved
+        if (ch == "=" || ch == "+" || ch == "_" || ch == "@" || ch == "<" || ch == ">" || ch == "{" || ch == "}" || ch == "[" || ch == "]" || ch == '"') {
+            let x = ch;
+            textSize(16);
+            textFont('Trebuchet MS');
+            fill(0)
+                strokeWeight(0)
+                .textSize(16);
+            text(x + " is an invalid character, not present in the standard California Job Case. \n Please try again.", 50, 80);
+            image(caseImage, 100, 150);
+            let link = createA("https://learningletterpress2012.files.wordpress.com/2012/02/letterpress_california_job_case_big.gif",
+                "image source", "_blank");
+            link(100, 100);
+            throw new Error ('invalid character');
+        }
         if (ch == 'e') {
             //ligatures and quads can be hard-coded here for recognition
             return {
@@ -51,11 +80,20 @@ function _map_character(ch) {
                 x: coordinates[6].x + int(random (-30, 30)),
                 y: coordinates[6].y+ int(random(-90, 90))
             }
-        } else if (ch == "~") {
+        } else if (ch == '~') { // manual line break shortcut, represented by an em-quad starting next line
             return {
                 character: ch,
                 x: coordinates[50].x + int(random(-10, 10)),
                 y: coordinates[50].y + int(random(-20, 20))
+            }
+        } else if (ch == 'f') {
+            if(chars[i + 1] == 'l') {
+                i++;
+                return {
+                    character: 'fl',
+                    x:coordinates[1].x + int(random(-10, 10)),
+                    y: coordinates[1].y + int(random(-10, 10))
+                }
             }
         } else if (ch == chars[i]) {
             return {
@@ -63,7 +101,7 @@ function _map_character(ch) {
             x: coordinates[i].x + int(random(-10, 10)),
             y: coordinates[i].y + int(random(-20, 20))
             }
-        }
+        } 
     }
 }
 
@@ -100,7 +138,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     background(255);
     inputSetup();
-    _vertices = _text.map(_map_character);
+    //_vertices = _text.map(_map_character);
      
 }
 
@@ -108,5 +146,5 @@ function setup() {
 function draw() {
     // called by P5 for each frame
     //_draw_characters();
-    //_draw_line();
+   _draw_line();
 }

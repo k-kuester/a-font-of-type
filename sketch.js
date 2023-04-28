@@ -33,12 +33,12 @@ function inputSetup() {
 
     //create input box and button 
   inp = createInput();
-  inp.position(50, 50);
+  inp.position(50, 60);
   //input.input(consoleFeedback);
   //extra comment for testing purposes
 
   button = createButton('submit');
-  button.position(55 + inp.width, 50);
+  button.position(55 + inp.width, 60);
   button.mousePressed(pressed);
 
 }
@@ -59,7 +59,7 @@ function _map_character(ch) {
 
     for (let i = 0; i < chars.length; i++) {
         //currently hard-coding is the only way to ensure this error works - to be improved
-        if (ch == "=" || ch == "+" || ch == "`" || ch == "_" || ch == "@" || ch == "<" || ch == ">" || ch == "{" || ch == "}" || ch == "[" || ch == "]" || ch == '"') {
+        if (ch == "=" || ch == "+" || ch == "_" || ch == "@" || ch == "<" || ch == ">" || ch == "{" || ch == "}" || ch == "[" || ch == "]" || ch == '"') {
             let x = ch;
             textSize(16);
             textFont('Trebuchet MS');
@@ -80,11 +80,20 @@ function _map_character(ch) {
                 x: coordinates[6].x + int(random (-30, 30)),
                 y: coordinates[6].y+ int(random(-90, 90))
             }
-        } else if (ch == "~") { // line break shortcut, represented by an em-quad starting next line
+        } else if (ch == '~') { // manual line break shortcut, represented by an em-quad starting next line
             return {
                 character: ch,
                 x: coordinates[50].x + int(random(-10, 10)),
                 y: coordinates[50].y + int(random(-20, 20))
+            }
+        } else if (ch == 'f') {
+            if(chars[i + 1] == 'l') {
+                i++;
+                return {
+                    character: 'fl',
+                    x:coordinates[1].x + int(random(-10, 10)),
+                    y: coordinates[1].y + int(random(-10, 10))
+                }
             }
         } else if (ch == chars[i]) {
             return {

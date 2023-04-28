@@ -1,5 +1,5 @@
 //proper mapping between char and point is possible,
-//presently chars and coordinates correctly ordered
+//presently chars and coordinates are correctly ordered
 
 var chars = ['ffi', 'fl', '/', '`', '\'', 
 'k', 'e', '1', '2', '3', 

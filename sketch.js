@@ -27,18 +27,20 @@ function inputSetup() {
     fill(0)
         .strokeWeight(0)
         .textSize(16);
-    text("welcome to the interactive demo! \n please enter your desired text.", 50, 70);
+    text("please enter your desired text.", 50, 70);
     textStyle(ITALIC);
-    text("note: copy/paste functionality is currently unsupported.", 50, 110);
+    text("line breaks are currently unsupported. if desired, the tildae (~) may be used to indicate line breaks.", 50, 90);
 
     //create input box and button 
   inp = createInput();
+  inp.style('font-size', '12px');
   inp.position(50, 60);
   //input.input(consoleFeedback);
   //extra comment for testing purposes
 
   button = createButton('submit');
-  button.position(55 + inp.width, 60);
+  button.style('font-size', '12px');
+  button.position(220, 60);
   button.mousePressed(pressed);
 
 }
@@ -59,7 +61,7 @@ function _map_character(ch) {
 
     for (let i = 0; i < chars.length; i++) {
         //currently hard-coding is the only way to ensure this error works - to be improved
-        if (ch == "=" || ch == "+" || ch == "_" || ch == "@" || ch == "<" || ch == ">" || ch == "{" || ch == "}" || ch == "[" || ch == "]" || ch == '"') {
+         if (ch == "=" || ch == "+" || ch == "_" || ch == "@" || ch == "<" || ch == ">" || ch == "{" || ch == "}" || ch == "[" || ch == "]" || ch == '"') {
             let x = ch;
             textSize(16);
             textFont('Trebuchet MS');
@@ -72,8 +74,13 @@ function _map_character(ch) {
                 "image source", "_blank");
             link(100, 100);
             throw new Error ('invalid character');
-        }
-        if (ch == 'e') {
+        } else if (ch == "’") {
+            return {
+                character: "'",
+                x:coordinates[4].x + int(random(-10, 10)),
+                y: coordinates[4].y + int(random(-10, 10))
+            }
+        }else if (ch == 'e') {
             //ligatures and quads can be hard-coded here for recognition
             return {
                 character: ch,
@@ -93,6 +100,12 @@ function _map_character(ch) {
                     character: 'fl',
                     x:coordinates[1].x + int(random(-10, 10)),
                     y: coordinates[1].y + int(random(-10, 10))
+                }
+            } else {
+                return {
+                    character: 'f',
+                    x:coordinates[21].x + int(random(-10, 10)),
+                    y: coordinates[21].y + int(random(-20, 20))
                 }
             }
         } else if (ch == chars[i]) {

@@ -29,7 +29,7 @@ function inputSetup() {
         .textSize(16);
     text("please enter your desired text.", 50, 70);
     textStyle(ITALIC);
-    text("line breaks are currently unsupported. if desired, the tildae (~) may be used to indicate line breaks.", 50, 90);
+    text("line breaks are currently unsupported. if desired, the tilde (~) may be used to indicate line breaks.", 50, 90);
 
     //create input box and button 
   inp = createInput();

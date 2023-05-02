@@ -17,8 +17,7 @@
     padding: 0 4px;
   }
   
-/* Create two equal columns that sit next to each other */
-
+/* create two equal columns that sit next to each other */
   div.column {
     flex: 50%;
     max-width: 50%;
@@ -37,7 +36,7 @@ figcaption {
     text-align: left;
 }
 
-/* Style the Image Used to Trigger the Modal */
+/* style the image used to trigger the modal */
 #myImg {
   cursor: pointer;
   transition: 0.3s;
@@ -45,22 +44,22 @@ figcaption {
 
 #myImg:hover {opacity: 0.7;}
 
-/* The Modal (background) */
+/*  modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none; /* hidden by default */
+  position: fixed; /* stay in place */
+  z-index: 1; /* sit on top */
+  padding-top: 100px; /* location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%; /* full width */
+  height: 100%; /* full height */
+  overflow: auto; /* enable scroll if needed */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
 }
 
-/* Modal Content (Image) */
+/* modal content (image) */
 .modal-content {
   margin: auto;
   display: block;
@@ -68,7 +67,7 @@ figcaption {
   max-width: 1000px;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
+/* caption of modal image (image text) - same width as the image */
 #caption {
   margin: auto;
   display: block;
@@ -80,7 +79,7 @@ figcaption {
   height: 150px;
 }
 
-/* Add Animation - Zoom in the Modal */
+/* add animation - zoom in the modal */
 .modal-content, #caption {
   animation-name: zoom;
   animation-duration: 0.5s;
@@ -107,20 +106,20 @@ figcaption {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
+/* 100% image width on smaller screens */
 @media only screen and (max-width: 800px){
   .modal-content {
     width: 100%;
   }
 }
 
-img{white-space:pre}
+img{white-space:pre};
 
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large">a-font-of-type.js</a>
@@ -131,7 +130,7 @@ img{white-space:pre}
   </div>
 </div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<!-- Navbar on small screens (unfinished) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
   <a href="#prologue" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="myFunction()">introduction</a>
   <a href="#gallery" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">gallery</a>
@@ -139,10 +138,10 @@ img{white-space:pre}
   <a href="sketch.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="myFunction()"> -> enter demo</a>
 </div>
 
-<!-- Page content -->
+<!-- page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-  <!-- Header Image -->
+  <!-- header Image -->
   <div class="w3-display-container w3-center">
     <img src="https://i.imgur.com/dxC8VYD.jpg" style="max-width:100%; height:auto">
     <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small w3-size: 14px">
@@ -152,7 +151,7 @@ img{white-space:pre}
   </div>
 
 
-  <!-- Intro Section -->
+  <!-- intro section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="prologue">
     <h2 class="w3-wide">a-font-of-type.js</h2>
     <p class="w3-opacity"><i>Building a (Better) Book, Spring '23</i></p>
@@ -160,7 +159,7 @@ img{white-space:pre}
     <a href="about.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()"> <em>learn more</em></a>  
   </div>
 
-  <!-- Gallery Section -->
+  <!-- gallery section -->
   <div class="w3-gray" id="gallery">
     <div class="w3-container w3-content w3-padding-64" style="max-width: auto">
       <h2 class="w3-wide w3-center">gallery</h2>
@@ -208,7 +207,7 @@ img{white-space:pre}
       </div>
       
 
-  <!-- About Section -->
+  <!-- about Section -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:100%" id="about">
     <div class="w3-display-container w3-center">
       <img src="https://i.imgur.com/x74PhTp.jpg" style="max-width:100%; height:auto">
@@ -221,12 +220,10 @@ img{white-space:pre}
     </div>
   </div>
 
-
-  
-<!-- End Page Content -->
+<!-- end page content -->
 </div>
 
-<!-- Footer -->
+<!-- footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey ">
   <p class="w3-medium">Created by Keely Kuester, Spring 2023</p>
   <i class="fa fa-map-marker"font-size="18px"></i> University of Illinois at Urbana-Champaign<br>
@@ -244,10 +241,8 @@ var modalImg = document.getElementById("img01");
 // and the caption in the modal
 var captionText = document.getElementById("caption");
 
-// Go through all of the images with our custom class
 for (var i = 0; i < images.length; i++) {
   var img = images[i];
-  // and attach our click listener for this image.
   img.onclick = function(evt) {
     modal.style.display = "block";
     modalImg.src = this.src;
